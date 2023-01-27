@@ -46,7 +46,7 @@ TagManager:
   - name: Background
     uniqueID: 1771703879
     locked: 0
-  - name: Ground
+  - name: Platform
     uniqueID: 2259983069
     locked: 0
   - name: Characters
