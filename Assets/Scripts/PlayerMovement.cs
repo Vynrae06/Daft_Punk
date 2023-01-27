@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
-    [SerializeField] float fireRate = 0.5f;
+    [SerializeField] float shootingRate = 0.5f;
     [SerializeField] GameObject playerProjectile;
     [SerializeField] Transform gun;
 
@@ -16,7 +16,14 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D myCapsuleCollider2D;
     BoxCollider2D myFeetCollider;
     bool isAlive = true;
-    bool allowFire = true;
+    bool allowShooting = true;
+
+    AudioPlayer audioPlayer;
+
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (value.isPressed)
         {
+            audioPlayer.PlayJumpClip();
             myRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
         }
     }
@@ -87,9 +95,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        if (myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
         {
             isAlive = false;
+            myAnimator.SetTrigger("triggerDeath");
+
+            audioPlayer.PlayPlayerDeathClip();
+            myRigidbody2D.velocity = Vector3.zero;
+            myCapsuleCollider2D.enabled = false;
+
+            FindObjectOfType<DeathAndRespawn>().KillAndRespawn(gameObject);
+
+            Destroy(gameObject, 1f);
         }
     }
 
@@ -97,18 +114,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isAlive) return;
 
-        if (!allowFire) return;
+        if (!allowShooting) return;
 
-        StartCoroutine(Fire());
+        StartCoroutine(Shoot());
     }
 
-    IEnumerator Fire()
+    IEnumerator Shoot()
     {
-        allowFire = false;
+        allowShooting = false;
 
+        audioPlayer.PlayGuitarShootingClip();
         Instantiate(playerProjectile, gun.position, transform.rotation);
-        yield return new WaitForSeconds(fireRate);
-        allowFire = true;
+        yield return new WaitForSeconds(shootingRate);
+
+        allowShooting = true;
     }
 
     public float GetRunSpeed()

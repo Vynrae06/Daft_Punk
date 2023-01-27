@@ -1,0 +1,638 @@
+fileFormatVersion: 2
+guid: 666f7a61c7bb8a146b0ddeddb2b99270
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Death _Purple_0
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc42e9879967ff4891e61a85103f9a6
+      internalID: 266656329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_1
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 83
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7392cc600b4489f4eab3ac32c0c03d47
+      internalID: -718091055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 84
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329783f2606bc344487305423ba5b034
+      internalID: -97298042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_3
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 81
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678818c7212cbad428b1c9763fe3774d
+      internalID: 966648725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_4
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 81
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f336e5ecb047beb41851041f890d854c
+      internalID: -112235491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 81
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0be4f1e19025946abf483d469d9579
+      internalID: 1995399048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_6
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 79
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274cf2b73ab38914cb20900dd2efca9e
+      internalID: 129242104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_8
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 78
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c15157c16d89ff48b97a36e86c904c8
+      internalID: 1617970396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_10
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 76
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207c2a59a5439e04c93f19ffa17eae0b
+      internalID: -601738186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_11
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 76
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5302f7261b258194a9415a11ce9c7a33
+      internalID: -679232578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_12
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 74
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f765e4ced2e14b8449dab7a22d5990c6
+      internalID: -963088520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_20
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 9
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2af5ff5cc6766468bfddf52d68da55
+      internalID: 1848388122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_38
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9916c01436304e145b5b51e58b6ac6f3
+      internalID: -1889916505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_39
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 9
+        width: 61
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b094b19a0594170418b929d5619a9dd0
+      internalID: 110036924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_40
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 12
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656f41162cb71154ea3e9d89265835de
+      internalID: -972436168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_49
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 12
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926523821de8a7146b1f1801cd5e6f27
+      internalID: -1247253498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_52
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 12
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbde0696f9230846ad07d947b218ca2
+      internalID: 1615111197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_56
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 12
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09813cd52abff84b91cf60a3b65fb10
+      internalID: -59336747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death _Purple_62
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 11
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55de79d8c45923740b0dc07bd747e873
+      internalID: -1171944504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Player_Death _Purple_74: 803422516
+      Player_Death _Purple_20: 1848388122
+      Player_Death _Purple_66: 619432083
+      Player_Death _Purple_88: -756718042
+      Player_Death _Purple_75: 272120154
+      Player_Death _Purple_50: -1589717133
+      Player_Death _Purple_49: -1247253498
+      Player_Death _Purple_23: 665639318
+      Player_Death _Purple_2: -97298042
+      Player_Death _Purple_4: -112235491
+      Player_Death _Purple_7: -235669085
+      Player_Death _Purple_47: -729027298
+      Player_Death _Purple_80: 278512718
+      Player_Death _Purple_29: 145016900
+      Player_Death _Purple_48: -1976309082
+      Player_Death _Purple_9: 1256254326
+      Player_Death _Purple_82: 541847120
+      Player_Death _Purple_34: -1292899686
+      Player_Death _Purple_0: 266656329
+      Player_Death _Purple_32: 1000066615
+      Player_Death _Purple_41: 360462801
+      Player_Death _Purple_79: -537120638
+      Player_Death _Purple_12: -963088520
+      Player_Death _Purple_57: -1881311018
+      Player_Death _Purple_14: 1205673300
+      Player_Death _Purple_43: 1013039919
+      Player_Death _Purple_83: -62296254
+      Player_Death _Purple_24: 1668773900
+      Player_Death _Purple_26: 1704748251
+      Player_Death _Purple_76: -1918441148
+      Player_Death _Purple_13: 1124425210
+      Player_Death _Purple_40: -972436168
+      Player_Death _Purple_67: 1219467730
+      Player_Death _Purple_27: 1829120599
+      Player_Death _Purple_22: -1694693534
+      Player_Death _Purple_65: 820150287
+      Player_Death _Purple_19: -2147035326
+      Player_Death _Purple_6: 129242104
+      Player_Death _Purple_52: 1615111197
+      Player_Death _Purple_69: -1629187607
+      Player_Death _Purple_72: -1089835009
+      Player_Death _Purple_36: 542909573
+      Player_Death _Purple_60: 839210374
+      Player_Death _Purple_70: -1107760501
+      Player_Death _Purple_37: 1941324966
+      Player_Death _Purple_33: -836182444
+      Player_Death _Purple_35: -1918309867
+      Player_Death _Purple_17: -1263183289
+      Player_Death _Purple_28: 2043262926
+      Player_Death _Purple_86: 348456986
+      Player_Death _Purple_61: -2091278555
+      Player_Death _Purple_15: -901064549
+      Player_Death _Purple_55: 1437346238
+      Player_Death _Purple_54: 33303834
+      Player_Death _Purple_10: -601738186
+      Player_Death _Purple_42: -421138820
+      Player_Death _Purple_71: 1255350633
+      Player_Death _Purple_89: -1046567079
+      Player_Death _Purple_77: 1371239196
+      Player_Death _Purple_31: -1549371824
+      Player_Death _Purple_39: 110036924
+      Player_Death _Purple_45: 1387456214
+      Player_Death _Purple_3: 966648725
+      Player_Death _Purple_64: -1852794615
+      Player_Death _Purple_91: -1789222063
+      Player_Death _Purple_16: -1287514904
+      Player_Death _Purple_59: 1827155737
+      Player_Death _Purple_56: -59336747
+      Player_Death _Purple_73: 2105160391
+      Player_Death _Purple_53: 237928194
+      Player_Death _Purple_21: 1824332762
+      Player_Death _Purple_5: 1995399048
+      Player_Death _Purple_58: -749953470
+      Player_Death _Purple_1: -718091055
+      Player_Death _Purple_8: 1617970396
+      Player_Death _Purple_44: -1645480003
+      Player_Death _Purple_30: -1368469514
+      Player_Death _Purple_51: 456739082
+      Player_Death _Purple_85: 522826445
+      Player_Death _Purple_11: -679232578
+      Player_Death _Purple_68: 483222287
+      Player_Death _Purple_90: 772178427
+      Player_Death _Purple_78: -2035282546
+      Player_Death _Purple_46: -104489428
+      Player_Death _Purple_18: 808287696
+      Player_Death _Purple_84: 1713069414
+      Player_Death _Purple_63: -1524877539
+      Player_Death _Purple_25: 1254022809
+      Player_Death _Purple_81: -1832113164
+      Player_Death _Purple_87: -1034436829
+      Player_Death _Purple_62: -1171944504
+      Player_Death _Purple_38: -1889916505
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

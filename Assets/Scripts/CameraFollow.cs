@@ -13,6 +13,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         threshold = CalculateThreshold();
+        if(followObject!= null)
         speed = followObject.GetComponent<PlayerMovement>().GetRunSpeed();
     }
 

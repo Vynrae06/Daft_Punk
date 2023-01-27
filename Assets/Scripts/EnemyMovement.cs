@@ -13,6 +13,12 @@ public class EnemyMovement : MonoBehaviour
     Animator myAnimator;
     CapsuleCollider2D myCapsuleCollider2D;
     BoxCollider2D myBoxCollider2D;
+    AudioPlayer audioPlayer;
+
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
         {
-            myAnimator.SetTrigger("Death");
+            myAnimator.SetTrigger("triggerDeath");
         }
     }
 
@@ -60,10 +66,10 @@ public class EnemyMovement : MonoBehaviour
 
     public void Die()
     {
-        myAnimator.SetTrigger("Death");
+        myAnimator.SetTrigger("triggerDeath");
 
         isAlive = false;
-
+        audioPlayer.PlayEnemyDeathClip();
         myRigidbody2D.velocity = Vector3.zero;
         myCapsuleCollider2D.enabled= false;
         myBoxCollider2D.enabled= false;
