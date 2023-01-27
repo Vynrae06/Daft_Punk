@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Shot
   - Enemy
+  - Player Projectile
   layers:
   - Default
   - TransparentFX
@@ -14,13 +14,13 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
+  - Player
+  - Player Projectile
   - Platform
   - 
+  - Background
   - 
-  - 
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -49,7 +49,10 @@ TagManager:
   - name: Platform
     uniqueID: 2259983069
     locked: 0
-  - name: Characters
+  - name: Enemies
+    uniqueID: 1959072121
+    locked: 0
+  - name: Players
     uniqueID: 1307752745
     locked: 0
   - name: Projectiles
