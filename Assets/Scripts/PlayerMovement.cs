@@ -118,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
         audioPlayer.PlayPlayerDeathClip();
         myRigidbody2D.velocity = Vector3.zero;
+        moveInput = Vector2.zero;
         myCapsuleCollider2D.enabled = false;
 
         FindObjectOfType<DeathAndRespawn>().KillAndRespawn(gameObject, playerNumber);

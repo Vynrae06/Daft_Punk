@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5502388662564072096}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.45, y: -11.14, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50,11 +50,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3fdaee2de5e9ea14085655dd6bead182, type: 3}
   - {fileID: 8300000, guid: c6aa9f99b4bdd684aa6db863bc9118b5, type: 3}
   - {fileID: 8300000, guid: 9027d3532d65b7e4591084bcc750f5e0, type: 3}
-  playerShotVolume: 0.1
+  playerShotVolume: 0.15
   enemyDeathClip: {fileID: 8300000, guid: 93933252765cfe74ca9182abd85162df, type: 3}
   enemyDeathVolume: 0.1
   playerDeathClip: {fileID: 8300000, guid: f2383add359badc4fbba4f28073d557a, type: 3}
-  playerDeathClipVolume: 0.1
+  playerDeathClipVolume: 0.3
   jumpingClip: {fileID: 8300000, guid: d2d00bb84b2209c408016c40bb387891, type: 3}
   jumpingClipVolume: 0.1
 --- !u!82 &5502388662564072099
