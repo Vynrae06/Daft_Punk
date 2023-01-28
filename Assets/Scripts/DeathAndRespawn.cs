@@ -5,39 +5,41 @@ using UnityEngine;
 public class DeathAndRespawn : MonoBehaviour
 {
     [SerializeField] float respawnTimer;
-    [SerializeField] GameObject playerPurple;
+    [SerializeField] GameObject player1;
+    [SerializeField] GameObject player2;
     [SerializeField] Transform[] checkPoints;
 
     int checkPointIndex = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    public void KillAndRespawn(GameObject gameObject, int playerNumber)
     {
-        
+        StartCoroutine(IKillAndRespawn(gameObject, playerNumber));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void KillAndRespawn(GameObject gameObject)
-    {
-        StartCoroutine(IKillAndRespawn(gameObject));
-    }
-
-    IEnumerator IKillAndRespawn(GameObject gameObject)
+    IEnumerator IKillAndRespawn(GameObject gameObject, int playerNumber)
     {
         Destroy(gameObject, respawnTimer);
 
         yield return new WaitForSeconds(respawnTimer);
 
-        GameObject newPlayer = Instantiate(playerPurple, checkPoints[checkPointIndex].position, Quaternion.identity);
-        FindObjectOfType<CameraFollow>().followObject = newPlayer;
+        GameObject newPlayer = new GameObject();
+
+        switch (playerNumber)
+        {
+            case 1:
+                newPlayer = Instantiate(player1, checkPoints[checkPointIndex].position, Quaternion.identity);
+                break;
+            case 2:
+                newPlayer = Instantiate(player2, checkPoints[checkPointIndex].position, Quaternion.identity);
+                break;
+        }
+        StartCoroutine(newPlayer.GetComponent<PlayerMovement>().Invincible());
+
+        // OLD: IF split screen
+        //FindObjectOfType<CameraFollow>().followObject = newPlayer;
     }
 
-    void IncrementCheckPoint()
+    public void IncrementCheckPoint()
     {
         checkPointIndex++;
     }

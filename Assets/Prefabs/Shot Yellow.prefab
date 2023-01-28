@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7475892285042121249}
   - component: {fileID: -5537623015054444761}
   m_Layer: 8
-  m_Name: Shot_Purple
+  m_Name: Shot Yellow
   m_TagString: Player Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -1456386359
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 910896753, guid: 3c30fb01a24907740a0ea96b4bb24a87, type: 3}
+  m_Sprite: {fileID: 1957029064, guid: 93b8b145efe5688498e93866926d9dd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 3726219311055590643}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 10eb4908b9417a34cbd238aa01bec101, type: 2}
+  m_Controller: {fileID: 9100000, guid: b6d070fa95739f54bbedf5cd782a6927, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -159,4 +159,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 15
   selfDestructTime: 1
-  enemyDeathAnimation: {fileID: -4762296814112661203, guid: 9a037cfa2ee65924aba29f11432e5aff, type: 3}

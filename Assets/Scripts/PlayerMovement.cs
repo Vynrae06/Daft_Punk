@@ -7,16 +7,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float shootingRate = 0.5f;
+    [SerializeField] float invincibilityDuration = 1f;
     [SerializeField] GameObject playerProjectile;
     [SerializeField] Transform gun;
+    [SerializeField] int playerNumber;
 
     Vector2 moveInput;
     Rigidbody2D myRigidbody2D;
     Animator myAnimator;
     CapsuleCollider2D myCapsuleCollider2D;
     BoxCollider2D myFeetCollider;
+    SpriteRenderer mySpriteRenderer;
+
     bool isAlive = true;
     bool allowShooting = true;
+    bool isDisabled = false;
+    bool isSpriteBlinking = false;
+    bool isInvincible = false;
 
     AudioPlayer audioPlayer;
 
@@ -32,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -48,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         if (!isAlive) return;
+        if (isDisabled) return;
 
         moveInput = value.Get<Vector2>();
     }
@@ -55,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     void OnJump(InputValue value)
     {
         if (!isAlive) return;
+        if (isDisabled) return;
 
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Platform")))
             return;
@@ -95,24 +105,45 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        if (myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")) && !isInvincible)
         {
-            isAlive = false;
-            myAnimator.SetTrigger("triggerDeath");
-
-            audioPlayer.PlayPlayerDeathClip();
-            myRigidbody2D.velocity = Vector3.zero;
-            myCapsuleCollider2D.enabled = false;
-
-            FindObjectOfType<DeathAndRespawn>().KillAndRespawn(gameObject);
-
-            Destroy(gameObject, 1f);
+            KillPlayer();
         }
+    }
+
+    public void KillPlayer()
+    {
+        isAlive = false;
+        myAnimator.SetTrigger("triggerDeath");
+
+        audioPlayer.PlayPlayerDeathClip();
+        myRigidbody2D.velocity = Vector3.zero;
+        myCapsuleCollider2D.enabled = false;
+
+        FindObjectOfType<DeathAndRespawn>().KillAndRespawn(gameObject, playerNumber);
+    }
+
+    public IEnumerator Invincible()
+    {
+        isInvincible = true;
+        InvokeRepeating("BlinkSprite", 0, invincibilityDuration / 32);
+
+        yield return new WaitForSeconds(invincibilityDuration);
+
+        isInvincible = false;
+        CancelInvoke();
+    }
+
+    void BlinkSprite()
+    {
+        isSpriteBlinking ^= true;
+        mySpriteRenderer.enabled = isSpriteBlinking;
     }
 
     void OnFire(InputValue value)
     {
         if (!isAlive) return;
+        if (isDisabled) return;
 
         if (!allowShooting) return;
 
@@ -133,5 +164,25 @@ public class PlayerMovement : MonoBehaviour
     public float GetRunSpeed()
     {
         return runSpeed;
+    }
+
+    public void DisableControls()
+    {
+        isDisabled = true;
+    }
+
+    public void TransitionPlayer(Vector3 offCameraSpawnPosition)
+    {
+        //OLD: If properly transitioning
+        //transform.position = new Vector3(offCameraSpawnPosition.x, offCameraSpawnPosition.y, 1f);
+        myRigidbody2D.velocity = Vector2.zero;
+
+        transform.position = offCameraSpawnPosition;
+        moveInput = Vector2.zero;
+    }
+
+    public void EnableControls()
+    {
+        isDisabled = false;
     }
 }

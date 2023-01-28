@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 753722109222943206}
   - component: {fileID: 753722109222943201}
   m_Layer: 13
-  m_Name: Mettaur_Yellow
+  m_Name: Mettaur - Yellow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  enemyDeathTime: 0.6
 --- !u!61 &753722109222943201
 BoxCollider2D:
   m_ObjectHideFlags: 0

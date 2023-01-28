@@ -6,6 +6,7 @@ using UnityEngine.InputSystem.Processors;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float enemyDeathTime = 0.8f;
 
     bool isAlive = true;
 
@@ -73,6 +74,6 @@ public class EnemyMovement : MonoBehaviour
         myRigidbody2D.velocity = Vector3.zero;
         myCapsuleCollider2D.enabled= false;
         myBoxCollider2D.enabled= false;
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, enemyDeathTime);
     }
 }

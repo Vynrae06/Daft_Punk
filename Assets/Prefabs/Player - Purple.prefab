@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 5705062657041702377}
   - component: {fileID: 5705062657041702379}
   m_Layer: 7
-  m_Name: Player_Purple
-  m_TagString: Untagged
+  m_Name: Player - Purple
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,8 +193,10 @@ MonoBehaviour:
   runSpeed: 10
   jumpSpeed: 25
   shootingRate: 0.5
+  invincibilityDuration: 2
   playerProjectile: {fileID: 3726219311055590643, guid: bbe55e575cbdbe84f95bea3be034c380, type: 3}
   gun: {fileID: 5705062657612409292}
+  playerNumber: 1
 --- !u!61 &5705062657041702379
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -208,7 +210,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2956801, y: -0.91068375}
+  m_Offset: {x: -0.2412219, y: -0.91068375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -219,7 +221,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1128248, y: 0.15851855}
+  m_Size: {x: 0.21602345, y: 0.15851855}
   m_EdgeRadius: 0
 --- !u!1 &5705062657612409299
 GameObject:
