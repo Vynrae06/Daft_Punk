@@ -18,22 +18,25 @@ public class DeathAndRespawn : MonoBehaviour
 
     IEnumerator IKillAndRespawn(GameObject gameObject, int playerNumber)
     {
-        Destroy(gameObject, respawnTimer);
-
-        yield return new WaitForSeconds(respawnTimer);
-
-        GameObject newPlayer = new GameObject();
-
-        switch (playerNumber)
+        if (gameObject != null)
         {
-            case 1:
-                newPlayer = Instantiate(player1, checkPoints[checkPointIndex].position, Quaternion.identity);
-                break;
-            case 2:
-                newPlayer = Instantiate(player2, checkPoints[checkPointIndex].position, Quaternion.identity);
-                break;
+            Destroy(gameObject, respawnTimer);
+
+            yield return new WaitForSeconds(respawnTimer);
+
+            GameObject newPlayer = new GameObject();
+
+            switch (playerNumber)
+            {
+                case 1:
+                    newPlayer = Instantiate(player1, checkPoints[checkPointIndex].position, Quaternion.identity);
+                    break;
+                case 2:
+                    newPlayer = Instantiate(player2, checkPoints[checkPointIndex].position, Quaternion.identity);
+                    break;
+            }
+            StartCoroutine(newPlayer.GetComponent<Player>().Invincible());
         }
-        StartCoroutine(newPlayer.GetComponent<PlayerMovement>().Invincible());
 
         // OLD: IF split screen
         //FindObjectOfType<CameraFollow>().followObject = newPlayer;

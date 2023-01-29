@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
@@ -43,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    private void FixedUpdate()
     {
         if (!isAlive) return;
 
@@ -103,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         if (myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")) && !isInvincible)
         {

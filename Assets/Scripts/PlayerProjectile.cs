@@ -8,7 +8,7 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] float projectileSpeed = 15f;
     [SerializeField] float selfDestructTime = 1f;
 
-    PlayerMovement player;
+    Player player;
     float xSpeed;
     Rigidbody2D rigidbody2D;
     
@@ -17,7 +17,7 @@ public class PlayerProjectile : MonoBehaviour
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<PlayerMovement>();
+        player = FindObjectOfType<Player>();
         xSpeed = player.transform.localScale.x * projectileSpeed;
         transform.localScale = new Vector3(player.transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
@@ -32,10 +32,15 @@ public class PlayerProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        if(collision.CompareTag("Enemy"))
         {
-            EnemyMovement enemy = collision.gameObject.GetComponent<EnemyMovement>();
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.Die();
+        }
+        if (collision.CompareTag("Britney"))
+        {
+            Britney britney = FindObjectOfType<Britney>();
+            britney.TakeHit();
         }
         Destroy(gameObject);
     }

@@ -28,7 +28,7 @@ public class CameraTriggerVolume : MonoBehaviour
             myBoxCollider2D.enabled = false;
             CameraSwitcher.SwitchCamera(nextCamera);
 
-            PlayerMovement player = gameobject.GetComponent<PlayerMovement>();
+            Player player = gameobject.GetComponent<Player>();
 
             StartCoroutine(TransitionScene());
         }
@@ -36,7 +36,7 @@ public class CameraTriggerVolume : MonoBehaviour
 
     IEnumerator TransitionScene()
     {
-        PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
+        Player[] players = FindObjectsOfType<Player>();
 
         DestroyPlayerProjectiles();
 
@@ -47,11 +47,14 @@ public class CameraTriggerVolume : MonoBehaviour
         FindObjectOfType<DeathAndRespawn>().IncrementCheckPoint();
     }
 
-    IEnumerator TransitionPlayers(PlayerMovement[] players)
+    IEnumerator TransitionPlayers(Player[] players)
     {
-        foreach (PlayerMovement player in players)
+        foreach (Player player in players)
         {
-            Destroy(player.gameObject);
+            if (player != null)
+            {
+                Destroy(player.gameObject);
+            }
         }
 
         List<GameObject> newPlayers = new List<GameObject>();
@@ -61,14 +64,14 @@ public class CameraTriggerVolume : MonoBehaviour
 
         foreach(GameObject newPlayer in newPlayers)
         {
-            newPlayer.GetComponent<PlayerMovement>().DisableControls();
+            newPlayer.GetComponent<Player>().DisableControls();
         }
 
         yield return new WaitForSeconds(transitionPause);
 
         foreach (GameObject newPlayer in newPlayers)
         {
-            newPlayer.GetComponent<PlayerMovement>().EnableControls();
+            newPlayer.GetComponent<Player>().EnableControls();
         }
     }
 
