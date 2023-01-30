@@ -12,6 +12,8 @@ public class CameraTriggerVolume : MonoBehaviour
     [SerializeField] GameObject player1;
     [SerializeField] GameObject player2;
     [SerializeField] float player2TransitionOffset = 1.5f;
+    [SerializeField] bool spawnBritney;
+    [SerializeField] GameObject britney;
 
     BoxCollider2D myBoxCollider2D;
 
@@ -45,6 +47,11 @@ public class CameraTriggerVolume : MonoBehaviour
         transitionSeparator.enabled = true;
 
         FindObjectOfType<DeathAndRespawn>().IncrementCheckPoint();
+
+        if (spawnBritney)
+        {
+            Instantiate(britney);
+        }
     }
 
     IEnumerator TransitionPlayers(Player[] players)

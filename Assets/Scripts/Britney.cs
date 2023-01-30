@@ -35,8 +35,8 @@ public class Britney : MonoBehaviour
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
 
-        //StartCoroutine(SpawnBritney());
-        nextPosition = rightPosition;
+        transform.position = rightPosition.position;
+        nextPosition = leftPosition;
     }
 
     // Update is called once per frame
@@ -87,7 +87,6 @@ public class Britney : MonoBehaviour
     {
         Instantiate(shot, gun.position, transform.rotation);
     }
-
 
     IEnumerator StartDashing()
     {
@@ -153,7 +152,6 @@ public class Britney : MonoBehaviour
         {
             isAlive = false;
             myAnimator.SetTrigger("triggerDeath");
-            //StartCoroutine(DeathSequence());
         }
     }
 
