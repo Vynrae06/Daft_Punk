@@ -3590,6 +3590,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5502388662564072097, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
+      propertyPath: britneyTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f04c4292ab98df43a8617ab49563f5d, type: 3}
+    - target: {fileID: 5502388662564072097, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
+      propertyPath: player1ShotVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502388662564072097, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
+      propertyPath: player2ShotVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502388662564072097, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
+      propertyPath: player8BitShotClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502388662564072097, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
+      propertyPath: player8BitShotClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: aa1bcab3a7bc4b7448bdaea713a5004b, type: 3}
+    - target: {fileID: 5502388662564072097, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
+      propertyPath: player8BitShotClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4207a2df97d95674a9a52e1c0205415c, type: 3}
+    - target: {fileID: 5502388662564072097, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
+      propertyPath: player8BitShotClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 01932f23125ff714695024635b58f8a8, type: 3}
+    - target: {fileID: 5502388662564072097, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
+      propertyPath: player8BitShotClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e6386a87b8d48f4784c895fe29d097b, type: 3}
     - target: {fileID: 5502388662564072098, guid: 41aa0da108e1cd646bba80ac5602fbf1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3707,6 +3739,18 @@ PrefabInstance:
       propertyPath: nextSpawnPoint
       value: 
       objectReference: {fileID: 355700463}
+    - target: {fileID: 7281408631372526653, guid: e0388ea1310ece64c8d55bbfda0ae6de, type: 3}
+      propertyPath: transitionDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281408631372526653, guid: e0388ea1310ece64c8d55bbfda0ae6de, type: 3}
+      propertyPath: transitionPause
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281408631372526653, guid: e0388ea1310ece64c8d55bbfda0ae6de, type: 3}
+      propertyPath: spawnBritneyDelay
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7281408631372526653, guid: e0388ea1310ece64c8d55bbfda0ae6de, type: 3}
       propertyPath: transitionSeparator
       value: 

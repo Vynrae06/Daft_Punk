@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
+
+    [SerializeField] AudioClip britneyTheme;
+
     [Header("Shooting")]
     [SerializeField] AudioClip[] playerGuitarShotClips;
-    [SerializeField] [Range(0f, 1f)] float playerShotVolume;
+    [SerializeField] [Range(0f, 1f)] float player1ShotVolume;
+
+    [SerializeField] AudioClip[] player8BitShotClips;
+    [SerializeField][Range(0f, 1f)] float player2ShotVolume;
 
     [Header("Death")]
     [SerializeField] AudioClip enemyDeathClip;
@@ -44,12 +50,40 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip deathBritneyClip;
     [SerializeField][Range(0f, 1f)] float deathBritneyClipVolume;
 
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public void StopMusic(float fadeOutDelay)
+    {
+        StartCoroutine(AudioFadeOut.FadeOut(audioSource, fadeOutDelay));
+        //audioSource.Stop();
+    }
+
+    public void PlayBritneyTheme()
+    {
+        audioSource.clip = britneyTheme;
+        audioSource.Play();
+    }
+
     public void PlayGuitarShootingClip()
     {
         if(playerGuitarShotClips != null)
         {
             int playerGuitarShotClipIndex = Random.Range(0, playerGuitarShotClips.Length);
-            AudioSource.PlayClipAtPoint(playerGuitarShotClips[playerGuitarShotClipIndex], Camera.main.transform.position, playerShotVolume);
+            AudioSource.PlayClipAtPoint(playerGuitarShotClips[playerGuitarShotClipIndex], Camera.main.transform.position, player1ShotVolume);
+        }
+    }
+
+    public void Play8BitShootingClip()
+    {
+        if (playerGuitarShotClips != null)
+        {
+            int playerShotClipIndex = Random.Range(0, player8BitShotClips.Length);
+            AudioSource.PlayClipAtPoint(player8BitShotClips[playerShotClipIndex], Camera.main.transform.position, player2ShotVolume);
         }
     }
 

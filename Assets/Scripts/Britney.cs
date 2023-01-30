@@ -29,13 +29,17 @@ public class Britney : MonoBehaviour
 
     AudioPlayer audioPlayer;
 
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        audioPlayer = FindObjectOfType<AudioPlayer>();
 
         transform.position = rightPosition.position;
         nextPosition = leftPosition;
@@ -92,13 +96,18 @@ public class Britney : MonoBehaviour
         }
     }
 
-    public void DashStart()
+    void DashCharge()
+    {
+        audioPlayer.PlayBritneyChargingDashClip();
+    }
+
+    void DashStart()
     {
         isDashing = true;
         audioPlayer.PlayBritneyDashClip();
     }
 
-    public void DashOver()
+    void DashOver()
     {
         SwitchDashNextPosition();
         Flip();
@@ -146,5 +155,10 @@ public class Britney : MonoBehaviour
     IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(1);
+    }
+
+    void PlayBritneyTheme()
+    {
+        audioPlayer.PlayBritneyTheme();
     }
 }

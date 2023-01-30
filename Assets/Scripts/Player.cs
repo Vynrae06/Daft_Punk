@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        if (myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")) && !isInvincible)
+        if ((myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")) || myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy Projectile"))) && !isInvincible)
         {
             KillPlayer();
         }
@@ -136,6 +136,7 @@ public class Player : MonoBehaviour
 
     public void KillPlayer()
     {
+        
         isAlive = false;
         myAnimator.SetTrigger("triggerDeath");
 
@@ -178,7 +179,10 @@ public class Player : MonoBehaviour
     {
         allowShooting = false;
 
+        if(playerNumber == 1)
         audioPlayer.PlayGuitarShootingClip();
+        if (playerNumber == 2)
+            audioPlayer.Play8BitShootingClip();
         Instantiate(playerProjectile, gun.position, transform.rotation);
         yield return new WaitForSeconds(shootingRate);
 
@@ -190,11 +194,6 @@ public class Player : MonoBehaviour
         return runSpeed;
     }
 
-    public void DisableControls()
-    {
-        isDisabled = true;
-    }
-
     public void TransitionPlayer(Vector3 offCameraSpawnPosition)
     {
         //OLD: If properly transitioning
@@ -204,6 +203,12 @@ public class Player : MonoBehaviour
         transform.position = offCameraSpawnPosition;
         moveInput = Vector2.zero;
     }
+
+    public void DisableControls()
+    {
+        isDisabled = true;
+    }
+
 
     public void EnableControls()
     {
