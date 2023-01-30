@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Player Projectile
+  - Britney
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Background
   - 
   - Enemy
-  - 
+  - Enemy Projectile
   - 
   - 
   - 
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Projectiles
     uniqueID: 2838580937
+    locked: 0
+  - name: Enemy Projectiles
+    uniqueID: 2003097017
     locked: 0
