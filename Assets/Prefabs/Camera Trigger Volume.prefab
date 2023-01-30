@@ -97,10 +97,13 @@ MonoBehaviour:
   nextCamera: {fileID: 0}
   nextSpawnPoint: {fileID: 0}
   transitionSeparator: {fileID: 0}
-  transitionPause: 1
+  transitionDelay: 2
   player1: {fileID: 5705062657041702385, guid: 5fb9ac09549d66a4eb04f9aae232277b, type: 3}
   player2: {fileID: 5705062657041702385, guid: e542a9274db9055459d98e69925963d1, type: 3}
   player2TransitionOffset: 0.5
+  spawnBritney: 0
+  britney: {fileID: 5317365009277548398, guid: 11a100b07b986024e9e32a9456786ca6, type: 3}
+  spawnBritneyDelay: 3
 --- !u!114 &7281408631372526654
 MonoBehaviour:
   m_ObjectHideFlags: 0

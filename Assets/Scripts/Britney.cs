@@ -152,9 +152,9 @@ public class Britney : MonoBehaviour
         }
     }
 
-    IEnumerator DeathSequence()
+    void DestroyBritney()
     {
-        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     void PlayBritneyTheme()
