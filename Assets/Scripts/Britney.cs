@@ -17,7 +17,6 @@ public class Britney : MonoBehaviour
 
     bool isDashing = false;
     bool isAlive = true;
-    bool canDoAction = true;
 
     // Same duration as animation
     // TODO: PROBLEM HAPPENS WHEN BRITNEY DASHES FIRSTS
@@ -28,18 +27,20 @@ public class Britney : MonoBehaviour
     [SerializeField] Transform rightPosition;
     Transform nextPosition;
 
+    AudioPlayer audioPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
 
         transform.position = rightPosition.position;
         nextPosition = leftPosition;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Die();
@@ -47,80 +48,60 @@ public class Britney : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canDoAction && isAlive) StartCoroutine(ActionSelection());
         Dash();
     }
 
-    IEnumerator SpawnBritney()
+    void BritneyWarpingAudio()
     {
-        yield return new WaitForSeconds(beginActionDelay);
+        audioPlayer.PlayBritneyWarpingClip();
     }
 
-    private IEnumerator ActionSelection()
+    void BritneyBitchAudio()
     {
-        canDoAction = false;
+        audioPlayer.PlayBritneyBitchClip();
+    }
+
+    public void ActionSelection()
+    {
         switch (Random.Range(0, 5))
         {
             case 0:
             case 1:
             case 2:
-                yield return StartShooting();
+                myAnimator.SetTrigger("triggerShoot");
                 break;
             case 3:
             case 4:
-                yield return StartDashing();
-                break;
-            default:
-                yield return new WaitForSeconds(1);
+                myAnimator.SetTrigger("triggerDash");
                 break;
         }
-        canDoAction = true;
     }
 
-    IEnumerator StartShooting()
-    {
-        myAnimator.SetTrigger("triggerShoot");
-        yield return new WaitForSeconds(shootCooldown);
-    }
-
-    public void Shoot()
+    void Shoot()
     {
         Instantiate(shot, gun.position, transform.rotation);
-    }
-
-    IEnumerator StartDashing()
-    {
-        myAnimator.SetTrigger("triggerDash");
-
-        yield return new WaitForSeconds(dashDuration);
-
-        SwitchDashNextPosition();
-        Flip();
-
-        StartCoroutine(DashCooldown());
+        audioPlayer.PlayBritneyShootClip();
     }
 
     void Dash()
     {
-        if (isDashing)
+        if (isDashing && isAlive)
         {
             Vector3 movement = (nextPosition.position - transform.position).normalized;
             myRigidbody2D.MovePosition(transform.position + movement * dashSpeed * Time.deltaTime);
         }
     }
 
-    IEnumerator DashCooldown()
-    {
-        yield return new WaitForSeconds(dashCooldown);
-    }
-
-    public void ChargeDashDone()
+    public void DashStart()
     {
         isDashing = true;
+        audioPlayer.PlayBritneyDashClip();
     }
 
     public void DashOver()
     {
+        SwitchDashNextPosition();
+        Flip();
         isDashing = false;
     }
 
@@ -144,13 +125,20 @@ public class Britney : MonoBehaviour
     public void TakeHit()
     {
         health -= 1;
+        if (health > 0)
+        {
+            audioPlayer.PlayBritneyHitTakenClip();
+        }
     }
 
     void Die()
     {
-        if (health <= 0)
+        if (health <= 0 && isAlive)
         {
+            isDashing = false;
             isAlive = false;
+            myCapsuleCollider.enabled = false;
+            audioPlayer.PlayBritneyDeathClip();
             myAnimator.SetTrigger("triggerDeath");
         }
     }

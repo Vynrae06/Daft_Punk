@@ -12,8 +12,11 @@ public class CameraTriggerVolume : MonoBehaviour
     [SerializeField] GameObject player1;
     [SerializeField] GameObject player2;
     [SerializeField] float player2TransitionOffset = 1.5f;
+
+    [Header("Britney")]
     [SerializeField] bool spawnBritney;
     [SerializeField] GameObject britney;
+    [SerializeField] float spawnBritneyDelay = 1f;
 
     BoxCollider2D myBoxCollider2D;
 
@@ -50,8 +53,13 @@ public class CameraTriggerVolume : MonoBehaviour
 
         if (spawnBritney)
         {
-            Instantiate(britney);
+            Invoke("SpawnBritney", spawnBritneyDelay);
         }
+    }
+
+    void SpawnBritney()
+    {
+        Instantiate(britney);
     }
 
     IEnumerator TransitionPlayers(Player[] players)

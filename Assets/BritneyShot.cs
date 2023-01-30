@@ -34,7 +34,7 @@ public class BritneyShot : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>();
 
-            player.KillPlayer();
+            player.Die();
 
             if (gameObject != null)
             {
