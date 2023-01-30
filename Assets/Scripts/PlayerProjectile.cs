@@ -7,8 +7,9 @@ public class PlayerProjectile : MonoBehaviour
 {
     [SerializeField] float projectileSpeed = 15f;
     [SerializeField] float selfDestructTime = 1f;
+    [SerializeField] float playerNumber;
 
-    Player player;
+    Player[] players;
     float xSpeed;
     Rigidbody2D rigidbody2D;
     
@@ -17,11 +18,17 @@ public class PlayerProjectile : MonoBehaviour
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<Player>();
-        xSpeed = player.transform.localScale.x * projectileSpeed;
-        transform.localScale = new Vector3(player.transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        players = FindObjectsOfType<Player>();
+        foreach(Player p in players)
+        {
+            if (p.playerNumber == playerNumber)
+            {
+                xSpeed = p.transform.localScale.x * projectileSpeed;
+                transform.localScale = new Vector3(p.transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            }
 
-        StartCoroutine(SelfDestruct());
+            StartCoroutine(SelfDestruct());
+        }
     }
 
     // Update is called once per frame

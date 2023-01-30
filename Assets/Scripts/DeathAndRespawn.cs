@@ -24,18 +24,17 @@ public class DeathAndRespawn : MonoBehaviour
 
             yield return new WaitForSeconds(respawnTimer);
 
-            GameObject newPlayer = new GameObject();
-
             switch (playerNumber)
             {
                 case 1:
-                    newPlayer = Instantiate(player1, checkPoints[checkPointIndex].position, Quaternion.identity);
+                    GameObject newPlayer1 = Instantiate(player1, checkPoints[checkPointIndex].position, Quaternion.identity);
+                    StartCoroutine(newPlayer1.GetComponent<Player>().Invincible());
                     break;
                 case 2:
-                    newPlayer = Instantiate(player2, checkPoints[checkPointIndex].position, Quaternion.identity);
+                    GameObject newPlayer2 = Instantiate(player2, checkPoints[checkPointIndex].position, Quaternion.identity);
+                    StartCoroutine(newPlayer2.GetComponent<Player>().Invincible());
                     break;
             }
-            StartCoroutine(newPlayer.GetComponent<Player>().Invincible());
         }
 
         // OLD: IF split screen

@@ -57,6 +57,22 @@ MonoBehaviour:
   playerDeathClipVolume: 0.3
   jumpingClip: {fileID: 8300000, guid: d2d00bb84b2209c408016c40bb387891, type: 3}
   jumpingClipVolume: 0.1
+  jumpingBritneyClip: {fileID: 0}
+  jumpingBritneyClipVolume: 0
+  shootingBritneyClip: {fileID: 8300000, guid: cdf4b520aea42ab4c82d9b0183aef022, type: 3}
+  shootingBritneyClipVolume: 0.4
+  dashingBritneyClip: {fileID: 8300000, guid: f81987c617a5e924cab96132134575d5, type: 3}
+  dashingBritneyClipVolume: 0.2
+  chargingDashBritneyClip: {fileID: 8300000, guid: 564aa9f7a7049454a8cc55434f6b2fcf, type: 3}
+  chargingDashBritneyClipVolume: 0.2
+  warpingingBritneyClip: {fileID: 8300000, guid: 89cf491abca565c4681e6371c3b9f934, type: 3}
+  warpingBritneyClipVolume: 0.4
+  bitchBritneyClip: {fileID: 8300000, guid: c55c7f1bc5752cf48aeabcc67a0859e8, type: 3}
+  bitchBritneyClipVolume: 0.4
+  hitTakenBritneyClip: {fileID: 8300000, guid: 818747823ca1e0944a7c049feda5e427, type: 3}
+  hitTakenBritneyClipVolume: 0.1
+  deathBritneyClip: {fileID: 8300000, guid: 47fa7654fee783143bc980d17af46aca, type: 3}
+  deathBritneyClipVolume: 0.1
 --- !u!82 &5502388662564072099
 AudioSource:
   m_ObjectHideFlags: 0

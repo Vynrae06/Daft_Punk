@@ -8,16 +8,23 @@ public class CameraTriggerVolume : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera nextCamera;
     [SerializeField] Transform nextSpawnPoint;
     [SerializeField] BoxCollider2D transitionSeparator;
-    [SerializeField] float transitionPause = 1f;
+    [SerializeField] float transitionDelay = 1f;
     [SerializeField] GameObject player1;
     [SerializeField] GameObject player2;
     [SerializeField] float player2TransitionOffset = 1.5f;
 
+    [Header("Britney")]
+    [SerializeField] bool spawnBritney;
+    [SerializeField] GameObject britney;
+    [SerializeField] float spawnBritneyDelay = 1f;
+
     BoxCollider2D myBoxCollider2D;
+    AudioPlayer audioPlayer;
 
     private void Start()
     {
         myBoxCollider2D = GetComponent<BoxCollider2D>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +36,12 @@ public class CameraTriggerVolume : MonoBehaviour
             CameraSwitcher.SwitchCamera(nextCamera);
 
             Player player = gameobject.GetComponent<Player>();
+
+            if (spawnBritney)
+            {
+                audioPlayer.StopMusic(transitionDelay);
+                Invoke("SpawnBritney", spawnBritneyDelay);
+            }
 
             StartCoroutine(TransitionScene());
         }
@@ -45,6 +58,11 @@ public class CameraTriggerVolume : MonoBehaviour
         transitionSeparator.enabled = true;
 
         FindObjectOfType<DeathAndRespawn>().IncrementCheckPoint();
+    }
+
+    void SpawnBritney()
+    {
+        Instantiate(britney);
     }
 
     IEnumerator TransitionPlayers(Player[] players)
@@ -67,7 +85,7 @@ public class CameraTriggerVolume : MonoBehaviour
             newPlayer.GetComponent<Player>().DisableControls();
         }
 
-        yield return new WaitForSeconds(transitionPause);
+        yield return new WaitForSeconds(transitionDelay);
 
         foreach (GameObject newPlayer in newPlayers)
         {

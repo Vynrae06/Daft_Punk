@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
+
 public class Player : MonoBehaviour
 {
     [SerializeField] float runSpeed = 10f;
@@ -10,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] float invincibilityDuration = 1f;
     [SerializeField] GameObject playerProjectile;
     [SerializeField] Transform gun;
-    [SerializeField] int playerNumber;
+    public int playerNumber;
 
     Vector2 moveInput;
     Rigidbody2D myRigidbody2D;
@@ -40,6 +42,26 @@ public class Player : MonoBehaviour
         myCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+
+        Controls();
+    }
+
+    private static void Controls()
+    {
+        var myPlayerInput2 = PlayerInput.all[1];
+        var myUser2 = myPlayerInput2.user;
+
+        var myPlayerInput1 = PlayerInput.all[0];
+        var myUser1 = myPlayerInput1.user;
+
+
+        myUser1.UnpairDevices();
+        myUser1.ActivateControlScheme("Keyboard&Mouse");
+        InputUser.PerformPairingWithDevice(Keyboard.current, myUser1);
+
+        myUser2.UnpairDevices();
+        myUser2.ActivateControlScheme("Keyboard&Mouse");
+        InputUser.PerformPairingWithDevice(Keyboard.current, myUser2);
     }
 
     // Update is called once per frame
@@ -106,7 +128,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        if (myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")) && !isInvincible)
+        if ((myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")) || myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy Projectile"))) && !isInvincible)
         {
             KillPlayer();
         }
@@ -114,6 +136,7 @@ public class Player : MonoBehaviour
 
     public void KillPlayer()
     {
+        
         isAlive = false;
         myAnimator.SetTrigger("triggerDeath");
 
@@ -156,7 +179,10 @@ public class Player : MonoBehaviour
     {
         allowShooting = false;
 
+        if(playerNumber == 1)
         audioPlayer.PlayGuitarShootingClip();
+        if (playerNumber == 2)
+            audioPlayer.Play8BitShootingClip();
         Instantiate(playerProjectile, gun.position, transform.rotation);
         yield return new WaitForSeconds(shootingRate);
 
@@ -168,11 +194,6 @@ public class Player : MonoBehaviour
         return runSpeed;
     }
 
-    public void DisableControls()
-    {
-        isDisabled = true;
-    }
-
     public void TransitionPlayer(Vector3 offCameraSpawnPosition)
     {
         //OLD: If properly transitioning
@@ -182,6 +203,12 @@ public class Player : MonoBehaviour
         transform.position = offCameraSpawnPosition;
         moveInput = Vector2.zero;
     }
+
+    public void DisableControls()
+    {
+        isDisabled = true;
+    }
+
 
     public void EnableControls()
     {
