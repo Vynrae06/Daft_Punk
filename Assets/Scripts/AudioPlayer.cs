@@ -6,6 +6,7 @@ public class AudioPlayer : MonoBehaviour
 {
 
     [SerializeField] AudioClip britneyTheme;
+    [SerializeField] AudioClip victoryTheme;
 
     [Header("Shooting")]
     [SerializeField] AudioClip[] playerGuitarShotClips;
@@ -60,12 +61,17 @@ public class AudioPlayer : MonoBehaviour
     public void StopMusic(float fadeOutDelay)
     {
         StartCoroutine(AudioFadeOut.FadeOut(audioSource, fadeOutDelay));
-        //audioSource.Stop();
     }
 
     public void PlayBritneyTheme()
     {
         audioSource.clip = britneyTheme;
+        audioSource.Play();
+    }
+
+    public void PlayVictoryTheme()
+    {
+        audioSource.clip = victoryTheme;
         audioSource.Play();
     }
 

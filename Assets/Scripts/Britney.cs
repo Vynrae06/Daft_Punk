@@ -137,6 +137,7 @@ public class Britney : MonoBehaviour
         if (health > 0)
         {
             audioPlayer.PlayBritneyHitTakenClip();
+            GetComponent<SimpleFlash>().Flash();
         }
     }
 
@@ -155,6 +156,7 @@ public class Britney : MonoBehaviour
     void DestroyBritney()
     {
         Destroy(gameObject);
+        audioPlayer.PlayVictoryTheme();
     }
 
     void PlayBritneyTheme()
