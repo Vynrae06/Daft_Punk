@@ -36,9 +36,6 @@ public class DeathAndRespawn : MonoBehaviour
                     break;
             }
         }
-
-        // OLD: IF split screen
-        //FindObjectOfType<CameraFollow>().followObject = newPlayer;
     }
 
     public void IncrementCheckPoint()

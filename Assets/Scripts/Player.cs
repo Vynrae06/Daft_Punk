@@ -136,16 +136,18 @@ public class Player : MonoBehaviour
 
     public void KillPlayer()
     {
-        
-        isAlive = false;
-        myAnimator.SetTrigger("triggerDeath");
+        if (isAlive)
+        {
+            isAlive = false;
+            myAnimator.SetTrigger("triggerDeath");
 
-        audioPlayer.PlayPlayerDeathClip();
-        myRigidbody2D.velocity = Vector3.zero;
-        moveInput = Vector2.zero;
-        myCapsuleCollider2D.enabled = false;
+            audioPlayer.PlayPlayerDeathClip();
+            myRigidbody2D.velocity = Vector3.zero;
+            moveInput = Vector2.zero;
+            myCapsuleCollider2D.enabled = false;
 
-        FindObjectOfType<DeathAndRespawn>().KillAndRespawn(gameObject, playerNumber);
+            FindObjectOfType<DeathAndRespawn>().KillAndRespawn(gameObject, playerNumber);
+        }
     }
 
     public IEnumerator Invincible()
@@ -196,10 +198,7 @@ public class Player : MonoBehaviour
 
     public void TransitionPlayer(Vector3 offCameraSpawnPosition)
     {
-        //OLD: If properly transitioning
-        //transform.position = new Vector3(offCameraSpawnPosition.x, offCameraSpawnPosition.y, 1f);
         myRigidbody2D.velocity = Vector2.zero;
-
         transform.position = offCameraSpawnPosition;
         moveInput = Vector2.zero;
     }
