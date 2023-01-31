@@ -8,8 +8,6 @@ public class Britney : MonoBehaviour
 
     [SerializeField] GameObject shot;
     [SerializeField] Transform gun;
-    [SerializeField] float shootCooldown = 1;
-    [SerializeField] float beginActionDelay = 5;
 
     Animator myAnimator;
     CapsuleCollider2D myCapsuleCollider;
@@ -18,16 +16,14 @@ public class Britney : MonoBehaviour
     bool isDashing = false;
     bool isAlive = true;
 
-    // Same duration as animation
-    // TODO: PROBLEM HAPPENS WHEN BRITNEY DASHES FIRSTS
-    [SerializeField] float dashDuration;
-    [SerializeField] float dashCooldown;
     [SerializeField] float dashSpeed = 1f;
     [SerializeField] Transform leftPosition;
     [SerializeField] Transform rightPosition;
-    Transform nextPosition;
 
+    Transform nextPosition;
     AudioPlayer audioPlayer;
+
+    [SerializeField] ParticleSystem deathVFX;
 
     private void Awake()
     {
@@ -63,6 +59,11 @@ public class Britney : MonoBehaviour
     void BritneyBitchAudio()
     {
         audioPlayer.PlayBritneyBitchClip();
+    }
+
+    void EnableCapsuleCollider2D()
+    {
+        myCapsuleCollider.enabled = true;
     }
 
     public void ActionSelection()
@@ -149,6 +150,7 @@ public class Britney : MonoBehaviour
             isAlive = false;
             myCapsuleCollider.enabled = false;
             audioPlayer.PlayBritneyDeathClip();
+            Instantiate(deathVFX, transform.position, Quaternion.Euler(-90, 0, 0));
             myAnimator.SetTrigger("triggerDeath");
         }
     }

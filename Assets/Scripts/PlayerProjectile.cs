@@ -31,8 +31,7 @@ public class PlayerProjectile : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         rigidbody2D.velocity = new Vector2(xSpeed, 0f);
     }
@@ -42,7 +41,7 @@ public class PlayerProjectile : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.Die();
+            enemy.TakeHit();
         }
         if (collision.CompareTag("Britney"))
         {

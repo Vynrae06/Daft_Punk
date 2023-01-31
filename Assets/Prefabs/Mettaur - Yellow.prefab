@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 753722109222943207}
   - component: {fileID: 753722109222943206}
   - component: {fileID: 753722109222943201}
+  - component: {fileID: 1563998293}
   m_Layer: 13
   m_Name: Mettaur - Yellow
   m_TagString: Enemy
@@ -158,8 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1b16d876e23d646b022845f5598519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2.5
   enemyDeathTime: 0.6
+  health: 2
 --- !u!61 &753722109222943201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,3 +188,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.11105156, y: 0.7850065}
   m_EdgeRadius: 0
+--- !u!114 &1563998293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753722109222943208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4c3e19b59adf140b9f70ab36dd0e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 598e477a045944842ab675b1d469c090, type: 2}
+  duration: 0.2

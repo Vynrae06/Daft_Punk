@@ -17,9 +17,15 @@ public class Scenes : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0 && Input.GetKey(KeyCode.Return) && !gameLoaded)
         {
-            gameLoaded = false;
+            gameLoaded = true;
             FindObjectOfType<AudioPlayer>().PlayGameStart();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(LoadGame());
         }
+    }
+
+    IEnumerator LoadGame()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

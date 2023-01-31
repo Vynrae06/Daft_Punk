@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] float enemyDeathTime = 0.8f;
+    [SerializeField] float health = 1;
 
     bool isAlive = true;
 
@@ -52,11 +53,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void TakeHit()
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
+        if (isAlive)
         {
-            myAnimator.SetTrigger("triggerDeath");
+            health -= 1;
+            if (health > 0)
+            {
+                audioPlayer.PlayEnemyHitTakenClip();
+                GetComponent<SimpleFlash>().Flash();
+            }
+            else
+            {
+                Die();
+            }
         }
     }
 
@@ -72,8 +82,8 @@ public class Enemy : MonoBehaviour
         isAlive = false;
         audioPlayer.PlayEnemyDeathClip();
         myRigidbody2D.velocity = Vector3.zero;
-        myCapsuleCollider2D.enabled= false;
-        myBoxCollider2D.enabled= false;
+        myCapsuleCollider2D.enabled = false;
+        myBoxCollider2D.enabled = false;
         Destroy(gameObject, enemyDeathTime);
     }
 }
