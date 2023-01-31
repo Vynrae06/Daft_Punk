@@ -394,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5317365009277548398, guid: 11a100b07b986024e9e32a9456786ca6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11a100b07b986024e9e32a9456786ca6, type: 3}
@@ -1096,6 +1096,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 3454566508951997108, guid: 5f637cb10bf36764281ee3030622dd9d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc0c48eba9b90834584638fc73841bf8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f637cb10bf36764281ee3030622dd9d, type: 3}
 --- !u!1 &582148815
@@ -13046,6 +13050,10 @@ PrefabInstance:
       propertyPath: points.Array.data[1]
       value: 
       objectReference: {fileID: 882048201}
+    - target: {fileID: 3454566508951997108, guid: 5f637cb10bf36764281ee3030622dd9d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc0c48eba9b90834584638fc73841bf8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f637cb10bf36764281ee3030622dd9d, type: 3}
 --- !u!1001 &5301597252010449281
