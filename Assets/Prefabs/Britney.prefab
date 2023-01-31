@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3067608a919af0249a5ca99789063c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 30
   shot: {fileID: 6037637455201701392, guid: 5102dc5bfda80e64cb8f5a3ffce8284d, type: 3}
   gun: {fileID: 5317365009758973713}
   shootCooldown: 3

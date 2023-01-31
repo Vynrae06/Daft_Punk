@@ -45,12 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eff02cb87dd0784fadc1c5c6b5c6df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  britneyTheme: {fileID: 8300000, guid: 6f04c4292ab98df43a8617ab49563f5d, type: 3}
+  victoryTheme: {fileID: 8300000, guid: 81d6bbf50dacacc4bb019445c2bd2cd2, type: 3}
+  gameStartClip: {fileID: 0}
+  gameStartClipVolume: 0.5
   playerGuitarShotClips:
   - {fileID: 8300000, guid: 4a2c06e78f225e14e8bbdc60be184454, type: 3}
   - {fileID: 8300000, guid: 3fdaee2de5e9ea14085655dd6bead182, type: 3}
   - {fileID: 8300000, guid: c6aa9f99b4bdd684aa6db863bc9118b5, type: 3}
   - {fileID: 8300000, guid: 9027d3532d65b7e4591084bcc750f5e0, type: 3}
-  playerShotVolume: 0.15
+  player1ShotVolume: 0
+  player8BitShotClips: []
+  player2ShotVolume: 0
   enemyDeathClip: {fileID: 8300000, guid: 93933252765cfe74ca9182abd85162df, type: 3}
   enemyDeathVolume: 0.1
   playerDeathClip: {fileID: 8300000, guid: f2383add359badc4fbba4f28073d557a, type: 3}

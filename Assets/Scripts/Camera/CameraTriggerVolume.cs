@@ -37,13 +37,13 @@ public class CameraTriggerVolume : MonoBehaviour
 
             Player player = gameobject.GetComponent<Player>();
 
+            StartCoroutine(TransitionScene());
+
             if (spawnBritney)
             {
                 audioPlayer.StopMusic(transitionDelay);
                 Invoke("SpawnBritney", spawnBritneyDelay);
             }
-
-            StartCoroutine(TransitionScene());
         }
     }
 
@@ -62,7 +62,7 @@ public class CameraTriggerVolume : MonoBehaviour
 
     void SpawnBritney()
     {
-        Instantiate(britney);
+        Instantiate(britney);;
     }
 
     IEnumerator TransitionPlayers(Player[] players)

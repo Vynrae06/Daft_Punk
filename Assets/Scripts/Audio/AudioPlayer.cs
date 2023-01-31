@@ -8,6 +8,9 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip britneyTheme;
     [SerializeField] AudioClip victoryTheme;
 
+    [SerializeField] AudioClip gameStartClip;
+    [SerializeField] [Range(0f, 1f)] float gameStartClipVolume;
+
     [Header("Shooting")]
     [SerializeField] AudioClip[] playerGuitarShotClips;
     [SerializeField] [Range(0f, 1f)] float player1ShotVolume;
@@ -51,6 +54,7 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip deathBritneyClip;
     [SerializeField][Range(0f, 1f)] float deathBritneyClipVolume;
 
+
     AudioSource audioSource;
 
     private void Start()
@@ -61,6 +65,11 @@ public class AudioPlayer : MonoBehaviour
     public void StopMusic(float fadeOutDelay)
     {
         StartCoroutine(AudioFadeOut.FadeOut(audioSource, fadeOutDelay));
+    }
+
+    public void PlayGameStart()
+    {
+        PlaySingleClip(gameStartClip, gameStartClipVolume);
     }
 
     public void PlayBritneyTheme()
