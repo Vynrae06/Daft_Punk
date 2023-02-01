@@ -1134,6 +1134,7 @@ MonoBehaviour:
   respawnTimer: 1
   player1: {fileID: 5705062657041702385, guid: 5fb9ac09549d66a4eb04f9aae232277b, type: 3}
   player2: {fileID: 5705062657041702385, guid: e542a9274db9055459d98e69925963d1, type: 3}
+  startCheckpoint: {fileID: 789444332}
 --- !u!4 &582148817
 Transform:
   m_ObjectHideFlags: 0

@@ -81,7 +81,7 @@ MonoBehaviour:
   bitchBritneyClipVolume: 0.4
   hitTakenBritneyClip: {fileID: 8300000, guid: 818747823ca1e0944a7c049feda5e427, type: 3}
   hitTakenBritneyClipVolume: 0.4
-  deathBritneyClip: {fileID: 8300000, guid: 47fa7654fee783143bc980d17af46aca, type: 3}
+  deathBritneyClip: {fileID: 8300000, guid: db51a7929d4e21f479cd34fb4c26f54f, type: 3}
   deathBritneyClipVolume: 0.5
 --- !u!82 &5502388662564072099
 AudioSource:
