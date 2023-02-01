@@ -193,7 +193,7 @@ MonoBehaviour:
   runSpeed: 10
   jumpSpeed: 25
   shootingRate: 0.5
-  invincibilityDuration: 3
+  invincibilityDuration: 2
   playerProjectile: {fileID: 3726219311055590643, guid: acf3db1056152f647a09233fdbc3c5db, type: 3}
   gun: {fileID: 5705062657612409292}
   playerNumber: 2

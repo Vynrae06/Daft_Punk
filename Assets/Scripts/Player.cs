@@ -101,6 +101,8 @@ public class Player : MonoBehaviour
 
     void JumpingAnimation()
     {
+        if (isDisabled) return;
+
         if (!myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Platform")))
             myAnimator.SetBool("isJumping", true);
         else

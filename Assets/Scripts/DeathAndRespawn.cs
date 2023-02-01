@@ -7,9 +7,13 @@ public class DeathAndRespawn : MonoBehaviour
     [SerializeField] float respawnTimer;
     [SerializeField] GameObject player1;
     [SerializeField] GameObject player2;
-    [SerializeField] Transform[] checkPoints;
+    [SerializeField] Transform startCheckpoint;
+    Transform checkPoint;
 
-    int checkPointIndex = 0;
+    private void Start()
+    {
+        checkPoint = startCheckpoint;
+    }
 
     public void KillAndRespawn(GameObject gameObject, int playerNumber)
     {
@@ -27,19 +31,19 @@ public class DeathAndRespawn : MonoBehaviour
             switch (playerNumber)
             {
                 case 1:
-                    GameObject newPlayer1 = Instantiate(player1, checkPoints[checkPointIndex].position, Quaternion.identity);
+                    GameObject newPlayer1 = Instantiate(player1, checkPoint.position, Quaternion.identity);
                     StartCoroutine(newPlayer1.GetComponent<Player>().Invincible());
                     break;
                 case 2:
-                    GameObject newPlayer2 = Instantiate(player2, checkPoints[checkPointIndex].position, Quaternion.identity);
+                    GameObject newPlayer2 = Instantiate(player2, checkPoint.position, Quaternion.identity);
                     StartCoroutine(newPlayer2.GetComponent<Player>().Invincible());
                     break;
             }
         }
     }
 
-    public void IncrementCheckPoint()
+    public void SetNewCheckpoint(Transform newCheckpoint)
     {
-        checkPointIndex++;
+        checkPoint = newCheckpoint;
     }
 }

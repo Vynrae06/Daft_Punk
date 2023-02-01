@@ -57,7 +57,7 @@ public class CameraTriggerVolume : MonoBehaviour
 
         transitionSeparator.enabled = true;
 
-        FindObjectOfType<DeathAndRespawn>().IncrementCheckPoint();
+        FindObjectOfType<DeathAndRespawn>().SetNewCheckpoint(nextSpawnPoint);
     }
 
     void SpawnBritney()

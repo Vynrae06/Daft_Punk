@@ -7,19 +7,30 @@ using UnityEngine.SceneManagement;
 public class Scenes : MonoBehaviour
 {
     bool gameLoaded = false;
-    // Update is called once per frame
+
     void Update()
     {
-        LoadNextScene();
+        LoadGame();
     }
 
-    public void LoadNextScene()
+    public void LoadGame()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0 && Input.GetKey(KeyCode.Return) && !gameLoaded)
+        if (SceneManager.GetActiveScene().buildIndex == 1 && Input.GetKey(KeyCode.Return) && !gameLoaded)
         {
-            gameLoaded = false;
+            gameLoaded = true;
             FindObjectOfType<AudioPlayer>().PlayGameStart();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(LoadGameCoroutine());
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator LoadGameCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

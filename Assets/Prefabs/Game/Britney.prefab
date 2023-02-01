@@ -117,14 +117,14 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5317365009277548398}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08564639, y: 0}
-  m_Size: {x: 1.4474607, y: 2.3153749}
+  m_Offset: {x: 0.08565903, y: 0}
+  m_Size: {x: 1.8691025, y: 2.3153749}
   m_Direction: 0
 --- !u!114 &5317365009277548371
 MonoBehaviour:
@@ -141,13 +141,10 @@ MonoBehaviour:
   health: 30
   shot: {fileID: 6037637455201701392, guid: 5102dc5bfda80e64cb8f5a3ffce8284d, type: 3}
   gun: {fileID: 5317365009758973713}
-  shootCooldown: 3
-  beginActionDelay: 3
-  dashDuration: 2.6
-  dashCooldown: 1
   dashSpeed: 22
   leftPosition: {fileID: 9150892849778446355, guid: 8086a95b2504f9b4ca89513fb6a2f4b5, type: 3}
   rightPosition: {fileID: 8338757422641598606, guid: 057d5b8ddc0b66a47a7443cfc81026a7, type: 3}
+  deathVFX: {fileID: 422952469312054604, guid: 808982efe8b95514cab7f596ed1ae012, type: 3}
 --- !u!50 &4729978086528608670
 Rigidbody2D:
   serializedVersion: 4

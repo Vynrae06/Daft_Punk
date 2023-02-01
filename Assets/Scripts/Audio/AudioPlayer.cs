@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-
+    [Header("Music")]
     [SerializeField] AudioClip britneyTheme;
     [SerializeField] AudioClip victoryTheme;
 
+    [Header("Game")]
     [SerializeField] AudioClip gameStartClip;
     [SerializeField] [Range(0f, 1f)] float gameStartClipVolume;
 
-    [Header("Shooting")]
+    [Header("Player")]
     [SerializeField] AudioClip[] playerGuitarShotClips;
     [SerializeField] [Range(0f, 1f)] float player1ShotVolume;
 
     [SerializeField] AudioClip[] player8BitShotClips;
     [SerializeField][Range(0f, 1f)] float player2ShotVolume;
-
-    [Header("Death")]
-    [SerializeField] AudioClip enemyDeathClip;
-    [SerializeField] [Range(0f, 1f)] float enemyDeathVolume;
 
     [SerializeField] AudioClip playerDeathClip;
     [SerializeField] [Range(0f, 1f)] float playerDeathClipVolume;
@@ -29,9 +26,14 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip jumpingClip;
     [SerializeField] [Range(0f, 1f)] float jumpingClipVolume;
 
+    [Header("Enemy")]
+    [SerializeField] AudioClip enemyDeathClip;
+    [SerializeField] [Range(0f, 1f)] float enemyDeathVolume;
+
+    [SerializeField] AudioClip enemyHitTakenClip;
+    [SerializeField] [Range(0f, 1f)] float enemyHitTakenClipVolume;
+
     [Header("Britney")]
-    [SerializeField] AudioClip jumpingBritneyClip;
-    [SerializeField][Range(0f, 1f)] float jumpingBritneyClipVolume;
 
     [SerializeField] AudioClip shootingBritneyClip;
     [SerializeField][Range(0f, 1f)] float shootingBritneyClipVolume;
@@ -115,6 +117,11 @@ public class AudioPlayer : MonoBehaviour
     public void PlayEnemyDeathClip()
     {
         PlaySingleClip(enemyDeathClip, enemyDeathVolume);
+    }
+
+    public void PlayEnemyHitTakenClip()
+    {
+        PlaySingleClip(enemyHitTakenClip, enemyHitTakenClipVolume);
     }
 
     // BRITNEY SECTION

@@ -47,38 +47,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   britneyTheme: {fileID: 8300000, guid: 6f04c4292ab98df43a8617ab49563f5d, type: 3}
   victoryTheme: {fileID: 8300000, guid: 81d6bbf50dacacc4bb019445c2bd2cd2, type: 3}
-  gameStartClip: {fileID: 0}
+  gameStartClip: {fileID: 8300000, guid: c802e484cf3a98448ae1afc7944a699d, type: 3}
   gameStartClipVolume: 0.5
   playerGuitarShotClips:
   - {fileID: 8300000, guid: 4a2c06e78f225e14e8bbdc60be184454, type: 3}
   - {fileID: 8300000, guid: 3fdaee2de5e9ea14085655dd6bead182, type: 3}
   - {fileID: 8300000, guid: c6aa9f99b4bdd684aa6db863bc9118b5, type: 3}
   - {fileID: 8300000, guid: 9027d3532d65b7e4591084bcc750f5e0, type: 3}
-  player1ShotVolume: 0
-  player8BitShotClips: []
-  player2ShotVolume: 0
-  enemyDeathClip: {fileID: 8300000, guid: 93933252765cfe74ca9182abd85162df, type: 3}
-  enemyDeathVolume: 0.1
+  player1ShotVolume: 1
+  player8BitShotClips:
+  - {fileID: 8300000, guid: aa1bcab3a7bc4b7448bdaea713a5004b, type: 3}
+  - {fileID: 8300000, guid: 4207a2df97d95674a9a52e1c0205415c, type: 3}
+  - {fileID: 8300000, guid: 01932f23125ff714695024635b58f8a8, type: 3}
+  - {fileID: 8300000, guid: 1e6386a87b8d48f4784c895fe29d097b, type: 3}
+  player2ShotVolume: 1
   playerDeathClip: {fileID: 8300000, guid: f2383add359badc4fbba4f28073d557a, type: 3}
-  playerDeathClipVolume: 0.3
+  playerDeathClipVolume: 0.4
   jumpingClip: {fileID: 8300000, guid: d2d00bb84b2209c408016c40bb387891, type: 3}
-  jumpingClipVolume: 0.1
-  jumpingBritneyClip: {fileID: 0}
-  jumpingBritneyClipVolume: 0
+  jumpingClipVolume: 0.4
+  enemyDeathClip: {fileID: 8300000, guid: 93933252765cfe74ca9182abd85162df, type: 3}
+  enemyDeathVolume: 0.4
+  enemyHitTakenClip: {fileID: 8300000, guid: 6c550066422af33488983108c79ac438, type: 3}
+  enemyHitTakenClipVolume: 0.4
   shootingBritneyClip: {fileID: 8300000, guid: cdf4b520aea42ab4c82d9b0183aef022, type: 3}
-  shootingBritneyClipVolume: 0.4
+  shootingBritneyClipVolume: 0.6
   dashingBritneyClip: {fileID: 8300000, guid: f81987c617a5e924cab96132134575d5, type: 3}
-  dashingBritneyClipVolume: 0.2
+  dashingBritneyClipVolume: 0.4
   chargingDashBritneyClip: {fileID: 8300000, guid: 564aa9f7a7049454a8cc55434f6b2fcf, type: 3}
-  chargingDashBritneyClipVolume: 0.2
+  chargingDashBritneyClipVolume: 0.4
   warpingingBritneyClip: {fileID: 8300000, guid: 89cf491abca565c4681e6371c3b9f934, type: 3}
   warpingBritneyClipVolume: 0.4
   bitchBritneyClip: {fileID: 8300000, guid: c55c7f1bc5752cf48aeabcc67a0859e8, type: 3}
   bitchBritneyClipVolume: 0.4
   hitTakenBritneyClip: {fileID: 8300000, guid: 818747823ca1e0944a7c049feda5e427, type: 3}
-  hitTakenBritneyClipVolume: 0.1
-  deathBritneyClip: {fileID: 8300000, guid: 47fa7654fee783143bc980d17af46aca, type: 3}
-  deathBritneyClipVolume: 0.1
+  hitTakenBritneyClipVolume: 0.4
+  deathBritneyClip: {fileID: 8300000, guid: db51a7929d4e21f479cd34fb4c26f54f, type: 3}
+  deathBritneyClipVolume: 0.5
 --- !u!82 &5502388662564072099
 AudioSource:
   m_ObjectHideFlags: 0
@@ -91,7 +95,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b7ee96718e32c0e48945c605c6f4abfb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
