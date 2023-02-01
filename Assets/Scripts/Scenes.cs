@@ -25,12 +25,12 @@ public class Scenes : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
     }
 
     IEnumerator LoadGameCoroutine()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(2);
     }
 }
