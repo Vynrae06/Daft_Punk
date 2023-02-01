@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
         myFeetCollider = GetComponent<BoxCollider2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
+        VictoryText vt = FindObjectOfType<VictoryText>();
+
         Controls();
     }
 

@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using static UnityEngine.EventSystems.StandaloneInputModule;
+
 
 public class AcessCode : MonoBehaviour
 {
@@ -12,10 +10,8 @@ public class AcessCode : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] dashes;
     [SerializeField] Color selectedColor;
     [SerializeField] Color unSelectedColor;
-    [SerializeField] GameObject SceneM;
     [SerializeField] TextMeshProUGUI message;
-    [SerializeField] float loadMainMenuDelay;
-    [SerializeField] Slider loadMainMenuSlider;
+
 
     int currentSymbol = 0;
 
@@ -92,7 +88,7 @@ public class AcessCode : MonoBehaviour
             if (string.Equals(inputCode, correctCode))
             {
                 message.text = "BON CODE!\nAPPUYEZ SUR LE BUZZER!";
-                StartCoroutine(LoadMainMenu());
+                
             }
             else
             {
@@ -119,20 +115,5 @@ public class AcessCode : MonoBehaviour
                 dashes[i].color = unSelectedColor;
             }
         }
-    }
-
-    IEnumerator LoadMainMenu()
-    {
-        loadMainMenuSlider.gameObject.SetActive(true);
-
-        float time = 0;
-        while (time < loadMainMenuDelay)
-        {
-            loadMainMenuSlider.value = Mathf.Lerp(0, 1, time / loadMainMenuDelay);
-            time += Time.deltaTime;
-            yield return null;
-        }
-
-        SceneM.transform.GetComponent<Scenes>().LoadMainMenu();
     }
 }

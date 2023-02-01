@@ -78,7 +78,7 @@ MonoBehaviour:
   warpingingBritneyClip: {fileID: 8300000, guid: 89cf491abca565c4681e6371c3b9f934, type: 3}
   warpingBritneyClipVolume: 0.4
   bitchBritneyClip: {fileID: 8300000, guid: c55c7f1bc5752cf48aeabcc67a0859e8, type: 3}
-  bitchBritneyClipVolume: 0.4
+  bitchBritneyClipVolume: 1
   hitTakenBritneyClip: {fileID: 8300000, guid: 818747823ca1e0944a7c049feda5e427, type: 3}
   hitTakenBritneyClipVolume: 0.4
   deathBritneyClip: {fileID: 8300000, guid: db51a7929d4e21f479cd34fb4c26f54f, type: 3}
@@ -95,7 +95,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b7ee96718e32c0e48945c605c6f4abfb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

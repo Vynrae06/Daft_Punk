@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Britney : MonoBehaviour
 {
@@ -157,8 +158,11 @@ public class Britney : MonoBehaviour
 
     void DestroyBritney()
     {
-        Destroy(gameObject);
+        FindObjectOfType<VictoryText>().gameObject.SetActive(true);
+
+        audioPlayer.StopMusic(1);
         audioPlayer.PlayVictoryTheme();
+        Destroy(gameObject);
     }
 
     void PlayBritneyTheme()
