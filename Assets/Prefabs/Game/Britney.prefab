@@ -145,6 +145,7 @@ MonoBehaviour:
   leftPosition: {fileID: 9150892849778446355, guid: 8086a95b2504f9b4ca89513fb6a2f4b5, type: 3}
   rightPosition: {fileID: 8338757422641598606, guid: 057d5b8ddc0b66a47a7443cfc81026a7, type: 3}
   deathVFX: {fileID: 422952469312054604, guid: 808982efe8b95514cab7f596ed1ae012, type: 3}
+  healthBar: {fileID: 7223672779998533978, guid: da67a2e6a3311fa42946c3129c69f5d4, type: 3}
 --- !u!50 &4729978086528608670
 Rigidbody2D:
   serializedVersion: 4

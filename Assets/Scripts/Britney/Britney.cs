@@ -5,7 +5,7 @@ using TMPro;
 
 public class Britney : MonoBehaviour
 {
-    [SerializeField] float health = 10;
+    [SerializeField] int health = 10;
 
     [SerializeField] GameObject shot;
     [SerializeField] Transform gun;
@@ -26,6 +26,8 @@ public class Britney : MonoBehaviour
 
     [SerializeField] ParticleSystem deathVFX;
 
+    HealthBar healthBar;
+
     private void Awake()
     {
         audioPlayer = FindObjectOfType<AudioPlayer>();
@@ -37,6 +39,10 @@ public class Britney : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
+
+        HealthBar[] healthBars = Resources.FindObjectsOfTypeAll<HealthBar>();
+        healthBar = healthBars[0];
+        healthBar.gameObject.SetActive(true);
 
         transform.position = rightPosition.position;
         nextPosition = leftPosition;
@@ -139,6 +145,7 @@ public class Britney : MonoBehaviour
         if (health > 0)
         {
             audioPlayer.PlayBritneyHitTakenClip();
+            healthBar.SetHealth(health);
             GetComponent<SimpleFlash>().Flash();
         }
     }
@@ -158,6 +165,7 @@ public class Britney : MonoBehaviour
 
     void DestroyBritney()
     {
+        healthBar.gameObject.SetActive(false);
         FindObjectOfType<VictoryText>().ShowText();
 
         audioPlayer.PlayVictoryTheme();
