@@ -8,6 +8,7 @@ public class Scenes : MonoBehaviour
 {
     bool gameLoaded = false;
     bool loading = false;
+    bool isCodeValid = false;
 
     void Update()
     {
@@ -30,11 +31,16 @@ public class Scenes : MonoBehaviour
 
     void LoadLoadingScreen()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0 && !loading)
+        if (SceneManager.GetActiveScene().buildIndex == 0 && !loading && isCodeValid)
         {
             loading = true;
             LoadingScreen();
         }
+    }
+
+    public void CodeValid()
+    {
+        isCodeValid = true;
     }
 
     public void LoadingScreen()

@@ -12,7 +12,7 @@ public class AcessCode : MonoBehaviour
     [SerializeField] Color unSelectedColor;
     [SerializeField] TextMeshProUGUI message;
 
-
+    Scenes scenes;
     int currentSymbol = 0;
 
     string correctCode = "A▲B►X◄";
@@ -24,6 +24,7 @@ public class AcessCode : MonoBehaviour
     void Start()
     {
         UpdateCurrentSelectedColor();
+        scenes = FindObjectOfType<Scenes>();
     }
 
     // ► ▼ ▲ ◄
@@ -87,8 +88,8 @@ public class AcessCode : MonoBehaviour
         {
             if (string.Equals(inputCode, correctCode))
             {
-                message.text = "BON CODE!\nAPPUYEZ SUR LE BUZZER!";
-                
+                message.text = "BON CODE!\n* APPUYEZ SUR LE BUZZER SUR LE BUREAU!\n* ENSUITE APPUYEZ SUR START SUR LA MANETTE...";
+                scenes.CodeValid();
             }
             else
             {
