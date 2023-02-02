@@ -158,9 +158,8 @@ public class Britney : MonoBehaviour
 
     void DestroyBritney()
     {
-        FindObjectOfType<VictoryText>().gameObject.SetActive(true);
+        FindObjectOfType<VictoryText>().ShowText();
 
-        audioPlayer.StopMusic(1);
         audioPlayer.PlayVictoryTheme();
         Destroy(gameObject);
     }

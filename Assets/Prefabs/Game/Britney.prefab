@@ -97,7 +97,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1959072121
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -1424763316, guid: c5f9bf5ecee37f94b9c68848d1789f9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -138,14 +138,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3067608a919af0249a5ca99789063c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 20
   shot: {fileID: 6037637455201701392, guid: 5102dc5bfda80e64cb8f5a3ffce8284d, type: 3}
   gun: {fileID: 5317365009758973713}
   dashSpeed: 22
   leftPosition: {fileID: 9150892849778446355, guid: 8086a95b2504f9b4ca89513fb6a2f4b5, type: 3}
   rightPosition: {fileID: 8338757422641598606, guid: 057d5b8ddc0b66a47a7443cfc81026a7, type: 3}
   deathVFX: {fileID: 422952469312054604, guid: 808982efe8b95514cab7f596ed1ae012, type: 3}
-  victoryText: {fileID: 4102864347367469721, guid: a8d89279e378ee74dafda12fd9faac84, type: 3}
 --- !u!50 &4729978086528608670
 Rigidbody2D:
   serializedVersion: 4

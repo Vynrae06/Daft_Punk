@@ -33,6 +33,7 @@ public class CameraTriggerVolume : MonoBehaviour
         if (gameobject.CompareTag("Player"))
         {
             myBoxCollider2D.enabled = false;
+
             CameraSwitcher.SwitchCamera(nextCamera);
 
             Player player = gameobject.GetComponent<Player>();

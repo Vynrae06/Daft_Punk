@@ -212,7 +212,6 @@ public class Player : MonoBehaviour
         isDisabled = true;
     }
 
-
     public void EnableControls()
     {
         isDisabled = false;
