@@ -9,6 +9,7 @@ public class Scenes : MonoBehaviour
     bool gameLoaded = false;
     bool loading = false;
     bool isCodeValid = false;
+    bool canResetGame = false;
 
     void Update()
     {
@@ -16,6 +17,10 @@ public class Scenes : MonoBehaviour
         {
             LoadGame();
             LoadLoadingScreen();
+        }
+        if(Input.GetKey(KeyCode.Return) && Input.GetKey(KeyCode.L) && Input.GetKey(KeyCode.J) && canResetGame)
+        {
+            ResetGame();
         }
     }
 
@@ -58,5 +63,16 @@ public class Scenes : MonoBehaviour
         FindObjectOfType<AudioPlayer>().StopMusic(1);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(3);
+    }
+
+    public void CanResetGame()
+    {
+        canResetGame = true;
+    }
+
+    void ResetGame()
+    {
+        canResetGame = false;
+        SceneManager.LoadScene(0);
     }
 }

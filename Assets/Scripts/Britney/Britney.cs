@@ -27,6 +27,7 @@ public class Britney : MonoBehaviour
     [SerializeField] ParticleSystem deathVFX;
 
     HealthBar healthBar;
+    Scenes scenes;
 
     private void Awake()
     {
@@ -46,6 +47,7 @@ public class Britney : MonoBehaviour
 
         transform.position = rightPosition.position;
         nextPosition = leftPosition;
+        scenes = FindObjectOfType<Scenes>();
     }
 
     void Update()
@@ -158,6 +160,7 @@ public class Britney : MonoBehaviour
             isAlive = false;
             myCapsuleCollider.enabled = false;
             audioPlayer.PlayBritneyDeathClip();
+            scenes.CanResetGame();
             Instantiate(deathVFX, transform.position, Quaternion.Euler(-90, 0, 0));
             myAnimator.SetTrigger("triggerDeath");
         }
