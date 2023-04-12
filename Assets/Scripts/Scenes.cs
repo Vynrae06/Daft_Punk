@@ -18,7 +18,7 @@ public class Scenes : MonoBehaviour
             LoadGame();
             LoadLoadingScreen();
         }
-        if(Input.GetKey(KeyCode.Return) && Input.GetKey(KeyCode.L) && Input.GetKey(KeyCode.J) && canResetGame)
+        if(Input.GetKey(KeyCode.Return) && canResetGame)
         {
             ResetGame();
         }

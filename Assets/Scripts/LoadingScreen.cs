@@ -7,11 +7,13 @@ public class LoadingScreen : MonoBehaviour
 {
     [SerializeField] float loadMainMenuDelay;
     [SerializeField] GameObject SceneM;
+    AudioPlayer audioPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(StartLoading());
+        //audioPlayer.PlayLoadingTheme();
     }
 
     IEnumerator StartLoading()

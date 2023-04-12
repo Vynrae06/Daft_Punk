@@ -7,6 +7,7 @@ public class AudioPlayer : MonoBehaviour
     [Header("Music")]
     [SerializeField] AudioClip britneyTheme;
     [SerializeField] AudioClip victoryTheme;
+    [SerializeField] AudioClip loadingTheme;
 
     [Header("Game")]
     [SerializeField] AudioClip gameStartClip;
@@ -72,6 +73,11 @@ public class AudioPlayer : MonoBehaviour
     public void PlayGameStart()
     {
         PlaySingleClip(gameStartClip, gameStartClipVolume);
+    }
+
+    public void PlayLoadingTheme()
+    {
+        PlaySingleClip(loadingTheme, 1);
     }
 
     public void PlayBritneyTheme()

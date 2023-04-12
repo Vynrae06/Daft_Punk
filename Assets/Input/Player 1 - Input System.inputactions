@@ -70,7 +70,7 @@
                 {
                     "name": "",
                     "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<Keyboard>/b",
+                    "path": "<Keyboard>/period",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -81,7 +81,7 @@
                 {
                     "name": "",
                     "id": "97de093c-d0b0-4e00-a9f2-d67d97c7cee5",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/comma",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",

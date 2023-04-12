@@ -52,7 +52,7 @@ public class AcessCode : MonoBehaviour
 
     private void CodeInput()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.A))
             UpdateText("A");
         else if (Input.GetKeyDown(KeyCode.B))
             UpdateText("B");
